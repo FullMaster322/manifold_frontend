@@ -20,6 +20,10 @@ export default {
     toList() {
       this.setActive('list');
       this.$router.push({ name: 'list' });
+    },
+     toContacts() {
+      this.setActive('contacts');
+      this.$router.push({ name: 'list' });
     }
   }
 }
@@ -40,6 +44,11 @@ export default {
         @click="toList"
         id="list"
       >AI list</span>
+       <span
+        :class="{ active: activeButton === 'contacts' }"
+        @click="toContacts"
+        id="contacts"
+      >Contacts</span>
       <span
         :class="{ active: activeButton === 'about' }"
         @click="toAbout"
@@ -60,9 +69,10 @@ body {
 .navbar {
   width: 100%;
   height: 50px;
-  background-color: #151a28cc;
+  background-color: #0a0c1136;
   margin: 0;
   text-align: center;
+  
 }
 .navbarButtons {
   padding-top: 14px;
@@ -78,7 +88,7 @@ body {
 .navbarButtons span:hover,
 .navbarButtons span.active {
   color: white;
-  border-bottom: 1px solid #FF7400;
+  border-bottom: 1px solid #00bfff;
 }
 
 
