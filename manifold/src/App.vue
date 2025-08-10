@@ -23,7 +23,7 @@ export default {
     },
      toContacts() {
       this.setActive('contacts');
-      this.$router.push({ name: 'list' });
+      this.$router.push({ name: 'contacts' });
     }
   }
 }
@@ -34,26 +34,10 @@ export default {
 <template>
   <div class="navbar">
     <div class="navbarButtons">
-      <span
-        :class="{ active: activeButton === 'home' }"
-        @click="toHome"
-        id="home"
-      >Home</span>
-      <span
-        :class="{ active: activeButton === 'list' }"
-        @click="toList"
-        id="list"
-      >AI list</span>
-       <span
-        :class="{ active: activeButton === 'contacts' }"
-        @click="toContacts"
-        id="contacts"
-      >Contacts</span>
-      <span
-        :class="{ active: activeButton === 'about' }"
-        @click="toAbout"
-        id="about"
-      >About</span>
+      <span :class="{ active: activeButton === 'home' }" @click="toHome" id="home">Home</span>
+      <span :class="{ active: activeButton === 'list' }" @click="toList" id="list">AI list</span>
+      <span :class="{ active: activeButton === 'contacts' }" @click="toContacts" id="contacts">Contacts</span>
+      <span :class="{ active: activeButton === 'about' }" @click="toAbout" id="about">About</span>
     </div>
   </div>
   <RouterView />
