@@ -8,8 +8,8 @@
       <h1>NEURAL<br>NETWORKS</h1>
       <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Est commodi alias suscipit nisi voluptatum hic nesciunt officia, sunt voluptatem reiciendis quidem doloribus repellat officiis accusantium iure odit. Quia, iusto molestiae.</p>
       <div style="display: flex;" class="buttons">
-        <button style="width: 200px;" class="get">get started</button>
-        <button style="margin-left: 20px; width: 200px;" class="learn">learn more</button>
+        <button style="width: 200px;" class="get">Get started</button>
+        <button style="margin-left: 20px; width: 200px;" class="learn">Learn more</button>
       </div>
       <div>
         <h1 style="font-size: 40px; margin-top: 120px;">USE CASES</h1>
@@ -17,24 +17,33 @@
           <div class="card" style="margin-left: 0; display: block; text-align: center;">
             <img class="cardImage" src="../assets/heathlcare.png" style="width: 150px; height: 150px; margin-top: 0; position: relative;"/>
             <h2 class="cardMainText" style="margin-top: -20px;">Healthcare</h2>
+            <p class="cardText">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quibusdam maxime at aut voluptas, sit dolorem ea temporibus beatae, illo obcaecati quod facere porro amet, libero quisquam aspernatur consequuntur minima fuga.</p>
           </div>
           <div class="card" style="margin-left: 50px; display: block; text-align: center;">
             <img class="cardImage" src="../assets/finances.png" style="width: 150px; height: 150px; margin-top: 0; position: relative;"/>
             <h2 class="cardMainText" style="margin-top: -20px;">Finance</h2>
+            <p class="cardText">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quibusdam maxime at aut voluptas, sit dolorem ea temporibus beatae, illo obcaecati quod facere porro amet, libero quisquam aspernatur consequuntur minima fuga.</p>
           </div>
          <div class="card" style="margin-left: 50px; display: block; text-align: center;">
-            <img class="cardImage" src="../assets/art.png" style="width: 150px; height: 150px; margin-top: 0; position: relative;"/>
+            <img class="cardImage" src="../assets/art.png" style="width: 150px; height: 150px; margin-top: 0; position: relative; z-index: 999;"/>
             <h2 class="cardMainText" style="margin-top: -20px;">Art</h2>
+            <p class="cardText">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quibusdam maxime at aut voluptas, sit dolorem ea temporibus beatae, illo obcaecati quod facere porro amet, libero quisquam aspernatur consequuntur minima fuga.</p>
           </div>
         </div>
       </div>
     </div>
     
+    
     <div class="star_system">
       <div class="star">
-        <img src="../assets/logo.png" style="width: 120px; height: 120px; border: 1px; border-radius: 50%; margin-top: 180px;"/>
+
+        <img src="../assets/logo.png" style="width: 120px; height: 120px; border: 1px; border-radius: 50%; margin-top: 180px; 
+        -webkit-box-shadow: 0px 0px 20px 2px #0078D4; 
+        -moz-box-shadow: 0px 0px 20px 2px #0078D4;
+        box-shadow: 0px 0px 20px 2px #0078D4;"/>
+
         <div style="margin-top: -190px;">
-        <div style="width: 250px; height: 250px; margin-left: -67px; margin-top: -65px; " class="orbit">
+        <div style="width: 250px; height: 250px; margin-left: -67px; margin-top: -65px;  animation: rotate 10s linear infinite;" class="orbit">
           <div style="margin-top: -20px;" class="planet">
             <img src="../assets/gptLogo.webp" style="width: 50px; height: 50px; border-radius: 50%;"/>
           </div>
@@ -44,12 +53,12 @@
           
         </div>
         <div style="width: 370px; height: 370px; margin-top: -310px; margin-left: -125px; animation: backRotate 15s linear infinite;" class="orbit">
-          <div style="margin-top: -15px;" class="planet">
-            <img src="../assets/hotpot.jpg" style="width: 50px; height: 50px; border-radius: 50%;"/>
+          <div style="margin-top: -15px; position: relative; z-index: 999; cursor: pointer;" class="planet">
+            <img src="../assets/hotpot.jpg" style="width: 50px; height: 50px; border-radius: 50%; position: relative; z-index: 999; z-index: 999;"/>
           </div>
         </div>
-        <div style="width: 500px; height: 500px; margin-top: -435px; margin-left: -190px; animation: rotate 20s linear infinite;" class="orbit">
-          <div style="margin-top: 10px; animation: rotate 20s linear infinite;" class="planet">
+        <div style="width: 500px; height: 500px; margin-top: -435px; margin-left: -190px; animation: rotate 20s linear infinite; z-index: 1;" class="orbit">
+          <div style="margin-top: 10px; animation: rotate 20s linear infinite; position: relative; z-index: 999;" class="planet">
             <img src="../assets/exactly.jpg" style="width: 50px; height: 50px; border-radius: 50%;"/>
           </div>
         </div>
@@ -58,7 +67,9 @@
        
       </div>
     </div>
+   
   </div>
+
   
 </template>
 
@@ -75,9 +86,8 @@ body {
   margin-top: 0px;
   margin-left: 20%;
   margin-right: 15%;
-  
-  
 }
+
 .main_text {
   width: 450px;
 }
@@ -89,6 +99,10 @@ body {
   margin-top: 5%;
   margin-left: 30%;
   
+    height: 0px;
+    width: 0px;
+
+  
 }
 .star {
   position: relative;
@@ -98,21 +112,22 @@ body {
 .planet {
   width: 50px; 
   height: 50px; 
-  border: 1px; 
+  border: 5px; 
   margin-left: 90px; 
   border-radius: 50%; 
   background-color: rgb(255, 255, 255); 
   transform: translate(90px, -50%);
   animation: backRotate 30s linear infinite;
 }
+
 .orbit {
   border: 2px solid #202a46; 
   border-radius: 50%;
-  animation: rotate 10s linear infinite;
-  position: relative;
+  z-index: 0;
 }
 
 .buttons button {
+  text-transform: none;
   margin-top: 10px;
   width: 200px;
   height: 50px;
@@ -169,14 +184,34 @@ body {
   align-items: center;
   justify-content: center;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
+  transition: 0.3s;
   cursor: pointer;
   z-index: 9999;
 }
-
+.card:hover .cardImage {
+  transition: 0.3s;
+  display: none;
+}
+.card:hover .cardMainText {
+  transition: 0.3s;
+  display: none;
+}
+.cardText {
+  transition: 0.3s;
+  display: none;
+  width: 300px;
+  text-align: left;
+  margin-left: 30px;
+}
+.card:hover .cardText
+{
+  display: block;
+}
 
 .card:hover {
   transform: translateY(-5px);
   box-shadow: 0 8px 20px rgba(13, 27, 42, 0.6);
+  background-color: #0078D4;
 }
 
 
