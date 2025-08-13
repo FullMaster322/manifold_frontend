@@ -80,12 +80,16 @@ body {
   background: radial-gradient(circle at center, #0a0f1c, #1a2238);
   color: #ffffff;
   overflow-x: hidden;
+  align-items: center;
+  justify-content: center;
 }
 .main {
   display: flex;
   margin-top: 0px;
-  margin-left: 20%;
-  margin-right: 15%;
+  margin-left: -15%;
+  align-items: center;
+  justify-content: center;
+  
 }
 
 .main_text {
@@ -96,8 +100,8 @@ body {
   margin-top: 20%;
 }
 .star_system {
-  margin-top: 5%;
-  margin-left: 30%;
+  margin-top: -700px;
+  margin-left: 400px;
   
     height: 0px;
     width: 0px;
@@ -106,7 +110,6 @@ body {
 }
 .star {
   position: relative;
-  
 
 }
 .planet {
