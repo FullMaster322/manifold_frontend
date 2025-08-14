@@ -56,11 +56,26 @@
           <div style="margin-top: -15px; position: relative; z-index: 999; cursor: pointer;" class="planet">
             <img src="../assets/hotpot.jpg" style="width: 50px; height: 50px; border-radius: 50%; position: relative; z-index: 999; z-index: 999;"/>
           </div>
+         
+          <div style="margin-top: 105px; margin-left: 345px; position: relative; z-index: 999; cursor: pointer;" class="planet">
+            <img src="../assets/hotpot.jpg" style="width: 50px; height: 50px; border-radius: 50%; position: relative; z-index: 999; z-index: 999;"/>
+          </div>
+           <div style="margin-top: 10px; margin-left: -20px; position: relative; z-index: 999; cursor: pointer;" class="planet">
+            <img src="../assets/hotpot.jpg" style="width: 50px; height: 50px; border-radius: 50%; position: relative; z-index: 999; z-index: 999;"/>
+          </div>
         </div>
+
         <div style="width: 500px; height: 500px; margin-top: -435px; margin-left: -190px; animation: rotate 20s linear infinite; z-index: 1;" class="orbit">
           <div style="margin-top: 10px; animation: rotate 20s linear infinite; position: relative; z-index: 999;" class="planet">
             <img src="../assets/exactly.jpg" style="width: 50px; height: 50px; border-radius: 50%;"/>
           </div>
+          <div style="margin-top: 250px; margin-left: -15px; animation: rotate 20s linear infinite; position: relative; z-index: 999;" class="planet">
+            <img src="../assets/exactly.jpg" style="width: 50px; height: 50px; border-radius: 50%;"/>
+          </div>
+           <div style="margin-top: 0px; margin-left: 435px; animation: rotate 20s linear infinite; position: relative; z-index: 999;" class="planet">
+            <img src="../assets/exactly.jpg" style="width: 50px; height: 50px; border-radius: 50%;"/>
+          </div>
+          
         </div>
         
         </div>
