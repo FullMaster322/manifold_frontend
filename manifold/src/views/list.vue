@@ -84,6 +84,7 @@ export default {
       <div>
         <h2 v-html="item.highlightedName"></h2>
         <p v-html="item.highlightedDescription"></p>
+        
         <button>Get {{ item.name }}</button>
       </div>
     </div>
@@ -120,8 +121,8 @@ export default {
   box-shadow: 0 12px 32px rgba(0, 0, 0, 0.6);
 }
 .aiCard img {
-  width: 150px;
-  height: 150px;
+  width: 140px;
+  height: 140px;
   border-radius: 12px;
   display: flex;
   align-items: center;
@@ -139,7 +140,7 @@ export default {
   margin-right: 20px;
 }
 .aiCard button {
-  margin-top: 30px;
+  margin-top: 20px;
   margin-left: 30px;
   padding: 10px 18px;
   border: none;

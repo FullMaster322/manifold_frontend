@@ -121,9 +121,8 @@ padding: 10px 14px; border: 1px; color: white; border-radius: 10px; outline: non
       
       
       <div style="margin: 10px 0 0 -50px; padding-top: 10px; height: 65%; position: fixed; margin-left: 120px;">
-        <span style="font-size: 24px;">{{ activeTabTitle }} &nbsp;</span>
-        <span style="font-size: 24px;">Chat with </span>
-        <span style="font-size: 24px; color: #0078D4; cursor: pointer;">
+        <span style="font-size: 18px;">Chat with&nbsp;</span>
+        <span style="font-size: 18px; color: #0078D4; cursor: pointer;">
           {{ selectedItemName || 'choose AI' }}
         </span>
       </div>
@@ -240,7 +239,7 @@ box-shadow: 0 0 10px rgba(79, 109, 252, 0.4);
 
 .aiCard {
   color: #b0c4ff;
-  padding: 12px 16px;
+  padding: 10px 12px;
   border-radius: 8px;
   width: 250px;
   margin-left: -130px;
@@ -264,7 +263,7 @@ box-shadow: 0 0 10px rgba(79, 109, 252, 0.4);
   margin-left: 10px;
 }
 .aiCard h2 {
-  margin-left: 4px;
+  margin-left: -5px;
   font-size: 16px;
 }
 .aiCard p {
