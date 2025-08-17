@@ -12,8 +12,7 @@
         <button style="margin-left: 20px; width: 200px;" class="learn">Learn more</button>
       </div>
       <div>
-        
-        <h1 style="font-size: 40px; margin-top: 100%;">USE CASES</h1>
+        <h1 style="font-size: 35px; margin-top: 120px; text-shadow: none;">USE CASES</h1>
          <div style="display: flex; width: 100%;">
           <div class="card" style="margin-left: 0; display: block; text-align: center;">
             <img class="cardImage" src="/images/heathlcare.png" style="width: 150px; height: 150px; margin-top: 0; position: relative;"/>
@@ -34,6 +33,7 @@
         </div>
         
       </div>
+    
     </div>
     
     
@@ -88,6 +88,10 @@
    
   </div>
 
+    <div class="footer">
+      <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quia, iusto molestiae.</p>
+    </div>
+
   
 </template>
 
@@ -104,24 +108,42 @@ body {
 .main {
   display: flex;
   margin-top: 0px;
-  margin-left: -15%;
+  margin-left: -30%;
   align-items: center;
   justify-content: center;
   
 }
 
+.footer {
+  display: flex;
+  margin-top: 50px;
+  margin-left: -25%;
+  align-items: center;
+  justify-content: center;
+  background-color: #0a0c11;
+  text-align: center;
+}
+
 .main_text {
   width: 450px;
-  margin-top: 10%;
+  margin-top: 50px;
 }
 .main_text h1 {
-  font-size: 50px;
+  text-align: left;
+  font-size: 64px;
+  font-weight: 700;
+  color: #ffffff;
+  text-shadow: 0 0 12px #4000ff;
+  margin-top: 80px;
+  letter-spacing: 2px;
 }
 .star_system {
-  margin-top: -1000px;
-  margin-left: 300px;
-  height: 0px;
-  width: 0px;
+  position: absolute;
+  margin-top: -650px;
+  margin-left: 1050px;
+  
+    height: 0px;
+    width: 0px;
 
   
 }
@@ -193,21 +215,19 @@ body {
   box-shadow: 0 6px 12px rgba(0,0,0,0.15);
 }
 .card {
-  min-width: 325px;
-  height: 200px;
-  background-color: #202a46;
-  margin-left: 50px;
-  border-radius: 20px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
-  color: #DDEAF2;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  transition: 0.3s;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 16px;
+  padding: 2px;
+  min-width: 320px;
+  text-align: left;
+  color: #e0e0ff;
+  backdrop-filter: blur(6px);
+  box-shadow: 0 0 8px rgba(255, 255, 255, 0.05);
+  transition: transform 0.3s ease;
+  z-index: 999;
   cursor: pointer;
-  z-index: 9999;
 }
+
 .card:hover .cardImage {
   transition: 0.3s;
   display: none;
@@ -219,7 +239,7 @@ body {
 .cardText {
   transition: 0.3s;
   display: none;
-  width: 280px;
+  width: 260px;
   text-align: left;
   margin-left: 30px;
 }
@@ -229,9 +249,8 @@ body {
 }
 
 .card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 8px 20px rgba(13, 27, 42, 0.6);
-  background-color: #0078D4;
+  transform: translateY(-6px);
+  box-shadow: 0 0 12px rgba(110, 63, 207, 0.3);
 }
 
 

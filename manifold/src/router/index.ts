@@ -3,6 +3,7 @@ import home from '../views/home.vue'
 import about from '../views/about.vue'
 import list from '../views/list.vue'
 import contacts from '../views/contacts.vue'
+import messenger from '../views/messenger.vue'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -28,6 +29,12 @@ const router = createRouter({
       path: '/contacts/',
       name: 'contacts',
       component: contacts,
+      props: true,
+    },
+    {
+      path: '/messenger/',
+      name: 'messenger',
+      component: messenger,
       props: true,
     },
   ],

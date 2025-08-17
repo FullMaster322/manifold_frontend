@@ -1,26 +1,26 @@
 [
   {
     "id": 1,
-    "name": "Объект Альфа",
+    "name": "Chat GPT",
     "description": "Первый тестовый объект с базовым описанием.",
     "src": "/images/gptLogo.webp"
 
   },
   {
     "id": 2,
-    "name": "Объект Бета",
+    "name": "Midjourney",
     "description": "Второй объект, предназначенный для демонстрации.",
     "src": "/images/midjourneyLogo.png"
   },
   {
     "id": 3,
-    "name": "Объект Гамма",
+    "name": "Hotpot",
     "description": "Третий элемент, содержащий расширенное описание.",
     "src": "/images/hotpot.jpg"
   },
   {
     "id": 4,
-    "name": "Объект Дельта",
+    "name": "Copilot",
     "description": "Четвёртый объект с уникальными характеристиками.",
     "src": "/images/copilotLogo.png"
   },
@@ -60,4 +60,5 @@
     "description": "Десятый объект, завершающий коллекцию.",
     "src": "src/assets/images/kappa.png"
   }
+  
 ]
