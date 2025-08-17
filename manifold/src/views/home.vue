@@ -12,24 +12,27 @@
         <button style="margin-left: 20px; width: 200px;" class="learn">Learn more</button>
       </div>
       <div>
-        <h1 style="font-size: 40px; margin-top: 120px;">USE CASES</h1>
+        
+        <h1 style="font-size: 40px; margin-top: 100%;">USE CASES</h1>
          <div style="display: flex; width: 100%;">
           <div class="card" style="margin-left: 0; display: block; text-align: center;">
-            <img class="cardImage" src="../assets/heathlcare.png" style="width: 150px; height: 150px; margin-top: 0; position: relative;"/>
+            <img class="cardImage" src="/images/heathlcare.png" style="width: 150px; height: 150px; margin-top: 0; position: relative;"/>
             <h2 class="cardMainText" style="margin-top: -20px;">Healthcare</h2>
             <p class="cardText">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quibusdam maxime at aut voluptas, sit dolorem ea temporibus beatae, illo obcaecati quod facere porro amet, libero quisquam aspernatur consequuntur minima fuga.</p>
           </div>
           <div class="card" style="margin-left: 50px; display: block; text-align: center;">
-            <img class="cardImage" src="../assets/finances.png" style="width: 150px; height: 150px; margin-top: 0; position: relative;"/>
+            <img class="cardImage" src="/images/finances.png" style="width: 150px; height: 150px; margin-top: 0; position: relative;"/>
             <h2 class="cardMainText" style="margin-top: -20px;">Finance</h2>
             <p class="cardText">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quibusdam maxime at aut voluptas, sit dolorem ea temporibus beatae, illo obcaecati quod facere porro amet, libero quisquam aspernatur consequuntur minima fuga.</p>
           </div>
          <div class="card" style="margin-left: 50px; display: block; text-align: center;">
-            <img class="cardImage" src="../assets/art.png" style="width: 150px; height: 150px; margin-top: 0; position: relative; z-index: 999;"/>
+            <img class="cardImage" src="/images/art.png" style="width: 150px; height: 150px; margin-top: 0; position: relative; z-index: 999;"/>
             <h2 class="cardMainText" style="margin-top: -20px;">Art</h2>
             <p class="cardText">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quibusdam maxime at aut voluptas, sit dolorem ea temporibus beatae, illo obcaecati quod facere porro amet, libero quisquam aspernatur consequuntur minima fuga.</p>
           </div>
+          
         </div>
+        
       </div>
     </div>
     
@@ -37,7 +40,7 @@
     <div class="star_system">
       <div class="star">
 
-        <img src="../assets/logo.png" style="width: 120px; height: 120px; border: 1px; border-radius: 50%; margin-top: 180px; 
+        <img src="/images/logo.png" style="width: 120px; height: 120px; border: 1px; border-radius: 50%; margin-top: 180px; 
         -webkit-box-shadow: 0px 0px 20px 2px #0078D4; 
         -moz-box-shadow: 0px 0px 20px 2px #0078D4;
         box-shadow: 0px 0px 20px 2px #0078D4;"/>
@@ -45,35 +48,35 @@
         <div style="margin-top: -190px;">
         <div style="width: 250px; height: 250px; margin-left: -67px; margin-top: -65px;  animation: rotate 10s linear infinite;" class="orbit">
           <div style="margin-top: -20px;" class="planet">
-            <img src="../assets/gptLogo.webp" style="width: 50px; height: 50px; border-radius: 50%;"/>
+            <img src="/images/gptLogo.webp" style="width: 50px; height: 50px; border-radius: 50%;"/>
           </div>
           <div style="margin-top: 190px;" class="planet">
-            <img src="../assets/midjourneyLogo.png" style="width: 50px; height: 50px; border-radius: 50%;"/>
+            <img src="/images/midjourneyLogo.png" style="width: 50px; height: 50px; border-radius: 50%;"/>
           </div>
           
         </div>
         <div style="width: 370px; height: 370px; margin-top: -310px; margin-left: -125px; animation: backRotate 15s linear infinite;" class="orbit">
           <div style="margin-top: -15px; position: relative; z-index: 999; cursor: pointer;" class="planet">
-            <img src="../assets/hotpot.jpg" style="width: 50px; height: 50px; border-radius: 50%; position: relative; z-index: 999; z-index: 999;"/>
+            <img src="/images/hotpot.jpg" style="width: 50px; height: 50px; border-radius: 50%; position: relative; z-index: 999; z-index: 999;"/>
           </div>
          
           <div style="margin-top: 105px; margin-left: 345px; position: relative; z-index: 999; cursor: pointer;" class="planet">
-            <img src="../assets/hotpot.jpg" style="width: 50px; height: 50px; border-radius: 50%; position: relative; z-index: 999; z-index: 999;"/>
+            <img src="/images/copilotLogo.png" style="width: 50px; height: 50px; border-radius: 50%; position: relative; z-index: 999; z-index: 999;"/>
           </div>
            <div style="margin-top: 10px; margin-left: -20px; position: relative; z-index: 999; cursor: pointer;" class="planet">
-            <img src="../assets/hotpot.jpg" style="width: 50px; height: 50px; border-radius: 50%; position: relative; z-index: 999; z-index: 999;"/>
+            <img src="/images/deepseekLogo.png" style="width: 50px; height: 50px; border-radius: 50%; position: relative; z-index: 999; z-index: 999;"/>
           </div>
         </div>
 
         <div style="width: 500px; height: 500px; margin-top: -435px; margin-left: -190px; animation: rotate 20s linear infinite; z-index: 1;" class="orbit">
           <div style="margin-top: 10px; animation: rotate 20s linear infinite; position: relative; z-index: 999;" class="planet">
-            <img src="../assets/exactly.jpg" style="width: 50px; height: 50px; border-radius: 50%;"/>
+            <img src="/images/gigaGpt.png" style="width: 50px; height: 50px; border-radius: 50%;"/>
           </div>
           <div style="margin-top: 250px; margin-left: -15px; animation: rotate 20s linear infinite; position: relative; z-index: 999;" class="planet">
-            <img src="../assets/exactly.jpg" style="width: 50px; height: 50px; border-radius: 50%;"/>
+            <img src="/images/notion.png" style="width: 50px; height: 50px; border-radius: 50%;"/>
           </div>
            <div style="margin-top: 0px; margin-left: 435px; animation: rotate 20s linear infinite; position: relative; z-index: 999;" class="planet">
-            <img src="../assets/exactly.jpg" style="width: 50px; height: 50px; border-radius: 50%;"/>
+            <img src="/images/yandexGpt.png" style="width: 50px; height: 50px; border-radius: 50%;"/>
           </div>
           
         </div>
@@ -109,17 +112,16 @@ body {
 
 .main_text {
   width: 450px;
+  margin-top: 10%;
 }
 .main_text h1 {
   font-size: 50px;
-  margin-top: 20%;
 }
 .star_system {
-  margin-top: -700px;
-  margin-left: 400px;
-  
-    height: 0px;
-    width: 0px;
+  margin-top: -1000px;
+  margin-left: 300px;
+  height: 0px;
+  width: 0px;
 
   
 }
@@ -191,7 +193,7 @@ body {
   box-shadow: 0 6px 12px rgba(0,0,0,0.15);
 }
 .card {
-  min-width: 350px;
+  min-width: 325px;
   height: 200px;
   background-color: #202a46;
   margin-left: 50px;
@@ -217,7 +219,7 @@ body {
 .cardText {
   transition: 0.3s;
   display: none;
-  width: 300px;
+  width: 280px;
   text-align: left;
   margin-left: 30px;
 }

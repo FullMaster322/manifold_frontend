@@ -53,10 +53,11 @@ body {
 .navbar {
   width: 100%;
   height: 50px;
-  background-color: #0a0c1136;
+  background-color: #0a0c11;
   margin: 0;
   text-align: center;
-  
+  position: fixed;
+  z-index: 9999;
 }
 .navbarButtons {
   padding-top: 14px;
