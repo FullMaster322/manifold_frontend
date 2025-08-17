@@ -35,7 +35,6 @@ const router = createRouter({
       path: '/messenger/',
       name: 'messenger',
       component: messenger,
-      props: true,
     },
   ],
 })

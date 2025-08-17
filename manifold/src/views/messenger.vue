@@ -7,11 +7,30 @@ export default {
       send: '',
       selectedItemName: null,
       selectedItemId: null,
+      id: null,
     };
   },
   mounted() {
-    this.fetchLocalJson();
-  },
+  this.id = this.$route.query.cardId;
+  console.log('ID from route:', this.id);
+
+  if (this.id) {
+    this.id = Number(this.id);
+  }
+
+  this.fetchLocalJson().then(() => {
+    const matchedItem = this.items.find(item => item.id === this.id);
+    if (matchedItem) {
+      this.selectItem({
+        ...matchedItem,
+        highlightedName: matchedItem.name,
+        highlightedDescription: matchedItem.description
+      });
+    }
+  });
+},
+
+
   computed: {
     highlightedItems() {
       const keyword = this.search.trim();
@@ -56,6 +75,7 @@ export default {
       this.selectedItemName = item.highlightedName;
       this.selectedItemId = item.id;
     },
+    
   }
 };
 </script>
@@ -200,7 +220,9 @@ box-shadow: 0 0 10px rgba(79, 109, 252, 0.4);
 .aiCard.selected {
   color: #0078D4;
   transition: all 0.3s ease;
+  background-color: #07080a;
 }
+
 
 .messenger {
   margin-top: 50px;
@@ -239,14 +261,13 @@ box-shadow: 0 0 10px rgba(79, 109, 252, 0.4);
 
 .aiCard {
   color: #b0c4ff;
-  padding: 10px 12px;
-  border-radius: 8px;
+  padding: 0px 12px;
   width: 250px;
   margin-left: -130px;
   display: flex;
   align-items: center;
   cursor: pointer;
-  margin-top: -40px;
+  margin-top: -10px;
   
 }
 .aiCard:hover {

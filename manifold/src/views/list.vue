@@ -50,6 +50,9 @@ export default {
     },
     Search() {
       console.log(this.search);
+    },
+    toMessenger(id) {
+      this.$router.push({ name: 'messenger', query: { cardId: id } });
     }
   }
 };
@@ -85,7 +88,7 @@ export default {
         <h2 v-html="item.highlightedName"></h2>
         <p v-html="item.highlightedDescription"></p>
         
-        <button>Get {{ item.name }}</button>
+        <button @click="toMessenger(item.id)">Get {{ item.name }}</button>
       </div>
     </div>
   </div>
