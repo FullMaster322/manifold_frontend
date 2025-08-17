@@ -2,47 +2,72 @@
 export default {
   data() {
     return {
-      activeButton: 'home'
+      activeSection: null
     };
   },
   methods: {
-    setActive(name) {
-      this.activeButton = name;
+    setActive(section) {
+      this.activeSection = section;
+    },
+    updateActiveFromRoute(route) {
+      const path = route.path;
+
+      if (path.includes('/messenger')) {
+        this.setActive('messenger');
+      } else if (path.includes('/contacts')) {
+        this.setActive('contacts');
+      } else if (path.includes('/list')) {
+        this.setActive('list');
+      } else if (path.includes('/about')) {
+        this.setActive('about');
+      } else if (path === '/' || path.includes('/home')) {
+        this.setActive('home');
+      } else {
+        this.setActive(null);
+      }
     },
     toHome() {
-      this.setActive('home');
       this.$router.push({ name: 'home' });
     },
     toAbout() {
-      this.setActive('about');
       this.$router.push({ name: 'about' });
     },
     toList() {
-      this.setActive('list');
       this.$router.push({ name: 'list' });
     },
-     toContacts() {
-      this.setActive('contacts');
+    toContacts() {
       this.$router.push({ name: 'contacts' });
     },
-     toMessenger() {
-      this.setActive('messenger');
+    toMessenger() {
       this.$router.push({ name: 'messenger' });
     }
+  },
+  watch: {
+    $route(to) {
+      this.updateActiveFromRoute(to);
+    }
+  },
+  mounted() {
+    this.updateActiveFromRoute(this.$route);
   }
-}
+};
 </script>
+
 
 
 
 <template>
   <div class="navbar">
     <div class="navbarButtons">
-      <span :class="{ active: activeButton === 'home' }" @click="toHome" id="home">Home</span>
-      <span :class="{ active: activeButton === 'messenger' }" @click="toMessenger" id="messenger" style="color: #00bfff;">Start messenger</span>
-      <span :class="{ active: activeButton === 'list' }" @click="toList" id="list">AI list</span>
-      <span :class="{ active: activeButton === 'contacts' }" @click="toContacts" id="contacts">Contacts</span>
-      <span :class="{ active: activeButton === 'about' }" @click="toAbout" id="about">About</span>
+
+    <nav>
+      <span :class="{ active: activeSection === 'home' }" @click="toHome">Home</span>
+      <span :class="{ active: activeSection === 'messenger' }" @click="toMessenger" style="color: #00bfff;">Messenger</span>
+      <span :class="{ active: activeSection === 'list' }" @click="toList">AI list</span>
+      <span :class="{ active: activeSection === 'about' }" @click="toAbout">About</span>
+      <span :class="{ active: activeSection === 'contacts' }" @click="toContacts">Contacts</span>
+    </nav>
+
     </div>
   </div>
   <RouterView />
@@ -87,9 +112,12 @@ body {
   color: white;
 }
 .navbarButtons span.active {
-  color: white;
+  color: #00bfff;
   border-bottom: 1px solid #00bfff;
 }
-
+.active {
+  border-bottom: 1px solid #00bfff;
+  color: #00bfff;
+}
 
 </style>

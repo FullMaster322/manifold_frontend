@@ -1,5 +1,11 @@
 <script>
-
+export default {
+  methods: {
+    toMessenger() {
+      this.$router.push({ name: 'messenger' });
+    }
+  }
+}
 </script>
 
 <template>
@@ -8,7 +14,7 @@
       <h1>NEURAL<br>NETWORKS</h1>
       <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Est commodi alias suscipit nisi voluptatum hic nesciunt officia, sunt voluptatem reiciendis quidem doloribus repellat officiis accusantium iure odit. Quia, iusto molestiae.</p>
       <div style="display: flex;" class="buttons">
-        <button style="width: 200px;" class="get">Get started</button>
+        <button style="width: 200px;" class="get" @click="toMessenger" id="messenger">Get started</button>
         <button style="margin-left: 20px; width: 200px;" class="learn">Learn more</button>
       </div>
       <div>
