@@ -62,7 +62,7 @@ export default {
 
     <nav>
       <span :class="{ active: activeSection === 'home' }" @click="toHome">Home</span>
-      <span :class="{ active: activeSection === 'messenger' }" @click="toMessenger" style="color: #00bfff;">Messenger</span>
+      <span :class="{ active: activeSection === 'messenger' }" @click="toMessenger" style="color: #00bfff;">Start messenger</span>
       <span :class="{ active: activeSection === 'list' }" @click="toList">AI list</span>
       <span :class="{ active: activeSection === 'about' }" @click="toAbout">About</span>
       <span :class="{ active: activeSection === 'contacts' }" @click="toContacts">Contacts</span>
@@ -82,6 +82,7 @@ body {
   background-attachment: fixed;
   font-family: 'Inter', sans-serif;
   color: #e0e0e0;
+  overflow-y: auto;
 }
 
 .navbar {
