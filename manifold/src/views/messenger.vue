@@ -4,8 +4,8 @@ import { ref, onMounted } from 'vue'
 const text = ref('')
 const textarea = ref(null)
 
-const baseHeight = 120
-const maxHeight = 200 
+const baseHeight = 110
+const maxHeight = 360 
 
 const adjustHeight = () => {
   const el = textarea.value
@@ -14,7 +14,6 @@ const adjustHeight = () => {
   el.style.height = 'auto'
   let newHeight = el.scrollHeight
 
-  // Ограничение по высоте
   if (newHeight > maxHeight) {
     newHeight = maxHeight
     el.style.overflowY = 'auto' 
@@ -128,6 +127,7 @@ export default {
 
 
 <template>
+  
   <div style="display: flex;">
     
     
@@ -141,7 +141,7 @@ export default {
             placeholder="Search"
             v-model="search"
             @input="Search"
-            style="margin-bottom: 20px; margin-left: -5px; width: 240px; font-size: 16px; padding: 3px; background: rgba(30, 35, 45, 0.9);
+            style="margin-bottom: 20px;  width: 110%; font-size: 16px; padding: 3px; background: rgba(30, 35, 45, 0.9);
 color: #e0e0e0;
 border: 1px solid rgba(255, 255, 255, 0.1);
 border-radius: 10px;
@@ -183,7 +183,7 @@ padding: 10px 14px; border: 1px; color: white; border-radius: 10px; outline: non
     <div class="messenger" >
       
       
-      <div style="margin: 10px 0 0 -50px; padding-top: 10px; height: 65%; position: fixed; margin-left: 16%;">
+      <div style="margin: 10px 0 0 -50px; padding-top: 20px; height: 65%; position: fixed; margin-left: 17%;">
         <span style="font-size: 18px;">Chat with&nbsp;</span>
         <span style="font-size: 18px; color: #0078D4; cursor: pointer;">
           {{ selectedItemName || 'choose AI' }}
@@ -191,25 +191,30 @@ padding: 10px 14px; border: 1px; color: white; border-radius: 10px; outline: non
       </div>
 
 
-      <div style="position: fixed; bottom: 0; margin-left: 0; width: 66%; margin-left: 5%; overflow: hidden;">
+      <div style="position: fixed; bottom: 0; margin-left: 0; width: 66%; margin-left: 5%; background-color:#2A2F3A;height: 60px; ">
       <div
           class="search-bar"
-          style="z-index: 9999; background: none; margin-top: 200px; padding-top: 10px; padding-bottom: 100px; padding-top: 50px;"
+          style="z-index: 9999; background: none; margin-top: 250px; padding-top: 10px; padding-bottom: 100px; padding-top: 50px;"
         >
           
-<div style="background-color: none; display: flex; padding-top: 35px; border: 1px; border-radius: 20px; padding-top: 2px;">
-    <div class="textarea-wrapper" style="width: 100%;">
+<div style=" display: flex; padding-top: 400px; margin-left: -4.7%; border: 1px;  padding-top: 2px; width: 95%; margin-top: -47%;">
+    <div class="textarea-wrapper" style="width: 100%; ">
+      <div class="areaButtons" style="z-index: 998; position: fixed; margin-left: 54.6%; bottom: 0%; display: flex; padding: 10px; padding-left: 22px; padding-right: 20px">
+      <button class="sendBtn" >➤</button>
+      <button class="sendBtn" >➤</button>
+      <button class="sendBtn" >➤</button>
+      </div>
     <textarea
       v-model="text"
       ref="textarea"
       class="grow-up"
       @input="adjustHeight"
       placeholder="Send message..."
-      style="width: 720px; max-height: 250px; padding-top: 10px; padding-bottom: 0; height: 42px;"
+      style="width: 90%; max-height: 350px; padding-top: 15px; font-size: 18px; margin-top: -78px; height: 50px"
     />
     
     </div>
-<button class="sendBtn">➤</button>
+    
           
         </div>
    </div>     
@@ -225,6 +230,13 @@ padding: 10px 14px; border: 1px; color: white; border-radius: 10px; outline: non
 
 
 <style scoped>
+.areaButtons {
+  background: rgba(255, 255, 255, 0.36);
+    background: rgba(255, 255, 255, 0.089);
+
+  backdrop-filter: blur(14px);
+
+}
 
 .textarea-wrapper {
   position: relative;
@@ -253,7 +265,7 @@ padding: 10px 14px; border: 1px; color: white; border-radius: 10px; outline: non
   height: 45px;
   border: none;
   border-radius: 50%;
-  margin-left: 5px;
+
   background: linear-gradient(135deg, #4f6dfc, #8f9eff);
 color: #fff;
 border: none;
@@ -298,7 +310,7 @@ box-shadow: 0 0 10px rgba(79, 109, 252, 0.4);
 
 .pages {
   position: fixed;
-  width: 150px;
+  width: 8%;
   padding-top: 150px;
   background: rgba(20, 25, 35, 0.6);
   backdrop-filter: blur(12px);
@@ -320,7 +332,7 @@ box-shadow: 0 0 10px rgba(79, 109, 252, 0.4);
   padding-left: 140px;
   padding-right: 120px;
   margin-left: -80px;
-  max-height: calc(100vh - 160px); /* адаптивная высота */
+  max-height: calc(100vh - 160px); 
   overflow-y: scroll;
   overflow-x: hidden;
   
@@ -331,15 +343,17 @@ box-shadow: 0 0 10px rgba(79, 109, 252, 0.4);
 
 .cardWrapper::-webkit-scrollbar {
   width: 6px;
+  cursor: pointer;
 }
 
 .cardWrapper::-webkit-scrollbar-track {
   background: rgba(255, 255, 255, 0.37);
+  cursor: pointer;
 }
 
 .cardWrapper::-webkit-scrollbar-thumb {
   background: rgba(255, 255, 255, 0.37);
-
+cursor: pointer;
 
 }
 
@@ -385,9 +399,9 @@ box-shadow: 0 0 10px rgba(79, 109, 252, 0.4);
   justify-content: center;
   width: 100%;
   background-color: #07080a;
-  margin-left: -10%;
+  margin-left: -15%;
   padding-right: 25%;
-  padding-left: 10%;
+  padding-left: 15%;
 
   height: 50px;
 }
@@ -395,10 +409,11 @@ box-shadow: 0 0 10px rgba(79, 109, 252, 0.4);
   width: 100%;
   background-color: #2A2F3A;
   border: 1px solid #2A2F3A;
-  font-size: 18px;
+  font-size: 2px;
   padding: 0px;
   border-radius: 10px;
-  padding-left: 25px;
+  padding-left: 5%;
+  padding-right: 10%;
   color: white;
   resize: none;
   outline: none;
