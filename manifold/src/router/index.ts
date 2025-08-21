@@ -36,6 +36,7 @@ const router = createRouter({
       name: 'messenger',
       component: messenger,
     },
+    
   ],
 })
 

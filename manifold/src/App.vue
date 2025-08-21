@@ -2,7 +2,8 @@
 export default {
   data() {
     return {
-      activeSection: null
+      activeSection: null,
+      hideStatus: 'none',
     };
   },
   methods: {
@@ -40,6 +41,13 @@ export default {
     },
     toMessenger() {
       this.$router.push({ name: 'messenger' });
+    },
+    changeHideStatus() {
+      if(this.hideStatus === 'block') {
+        this.hideStatus = 'none'
+      } else {
+        this.hideStatus = 'block'
+      }
     }
   },
   watch: {
@@ -57,15 +65,24 @@ export default {
 
 
 <template>
+
+  <div class="loginPanelBack" :style="{ display: hideStatus }">
+    <div class="loginPanel">
+      <h1>Login</h1>
+      <input />
+    </div>
+  </div>
   <div class="navbar">
     <div class="navbarButtons">
 
     <nav>
-      <span :class="{ active: activeSection === 'home' }" @click="toHome">Home</span>
+      <span :class="{ active: activeSection === 'home' }" @click="toHome" style="margin-left: 150px;">Home</span>
       <span :class="{ active: activeSection === 'messenger' }" @click="toMessenger" style="color: #00bfff;">Start messenger</span>
       <span :class="{ active: activeSection === 'list' }" @click="toList">AI list</span>
       <span :class="{ active: activeSection === 'about' }" @click="toAbout">About</span>
       <span :class="{ active: activeSection === 'contacts' }" @click="toContacts">Contacts</span>
+      <span style="margin-left: 100px;" @click="changeHideStatus">Login / Registration</span>
+        
     </nav>
 
     </div>
@@ -84,12 +101,26 @@ body {
   color: #e0e0e0;
   overflow-y: auto;
 }
-
+.loginPanelBack {
+  background: rgba(255, 255, 255, 0.066);
+  backdrop-filter: blur(8px);
+  position: absolute; width: 100%;  height: 100%; text-align: center; z-index: 9999;
+  border: 1px solid rgba(255, 255, 255, 0.066);
+  border-radius: 20px;
+}
+.loginPanel {
+  margin-top: 10%;
+  background: rgb(20, 25, 35); 
+  margin-left: 35%; 
+  margin-right: 35%;
+  border: 1px;
+  border-radius: 10px;
+}
 .navbar {
   width: 100%;
   height: 50px;
   background: rgba(20, 25, 35, 0.6);
-  backdrop-filter: blur(10px);
+  backdrop-filter: blur(14px);
   border-bottom: 1px solid rgba(255, 255, 255, 0.05);
   margin: 0;
   text-align: center;

@@ -205,7 +205,7 @@ padding: 10px 14px; border: 1px; color: white; border-radius: 10px; outline: non
       <div style="position: fixed; bottom: 0; margin-left: 0; width: 66%; margin-left: 5%; overflow: hidden;">
       <div
           class="search-bar"
-          style="z-index: 9999; background: none; margin-top: 200px; padding-top: 10px; padding-bottom: 100px; padding-top: 50px; justify-content: center;"
+          style="z-index: 9999; background: none; margin-top: 200px; padding-top: 100px; padding-bottom: 100px; padding-top: 50px; justify-content: center;"
         >
           
 <div style="background-color: none; display: flex; padding-top: 35px; border: 1px; border-radius: 20px; padding-top: 2px; justify-content: center;">
@@ -242,7 +242,7 @@ padding: 10px 14px; border: 1px; color: white; border-radius: 10px; outline: non
   left: -35%;
   height: 200px;
   width: 100%;
-  bottom: 3%;
+  bottom: 7%;
   
 }
 .grow-up {

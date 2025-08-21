@@ -65,7 +65,7 @@ export default {
   
 
 <div style="background: #0a0c1136; width: 80%; margin-left: 10%; padding-top: 80px;">
-  <div class="search-bar" style="z-index: 9999;">
+  <div class="search-bar" style="z-index: 9998;">
     <div class="search-bar-mega">
       <input type="text" placeholder="Search" v-model="search" v-on:input="Search">
       <button class="fas fa-search"></button>
