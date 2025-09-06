@@ -7,7 +7,7 @@ export default {
     };
   },
   mounted() {
-    this.fetchLocalJson();
+    this.fetchAIList();
   },
  computed: {
   highlightedItems() {
@@ -15,7 +15,7 @@ export default {
     if (!keyword) {
       return this.items.map(item => ({
         ...item,
-        highlightedName: item.name,
+        highlightedName: item.title,
         highlightedDescription: item.description
       }));
     }
@@ -23,9 +23,9 @@ export default {
     const regex = new RegExp(`(${keyword})`, 'gi');
 
     return this.items
-      .filter(item => regex.test(item.name) || regex.test(item.description))
+      .filter(item => regex.test(item.title) || regex.test(item.description))
       .map(item => {
-        const highlightedName = item.name.replace(regex, '<span style="background: #0078D4; color: white">$1</span>');
+        const highlightedName = item.title.replace(regex, '<span style="background: #0078D4; color: white">$1</span>');
         const highlightedDescription = item.description.replace(regex, '<span style="background: #0078D4; color: white">$1</span>');
         return {
           ...item,
@@ -38,16 +38,17 @@ export default {
 
 
   methods: {
-    async fetchLocalJson() {
-      try {
-        const response = await fetch('/src/assets/list.json');
-        const data = await response.json();
-        this.items = data || [];
-        console.log('list.json:', data);
-      } catch (error) {
-        console.error('ERROR LIST JSON:', error);
-      }
-    },
+    async fetchAIList() {
+  try {
+    const response = await fetch('http://localhost:8000/ai/'); 
+    const data = await response.json();
+    this.items = data || [];
+    console.log('AI list from backend:', data);
+  } catch (error) {
+    console.error('ERROR FETCHING AI LIST:', error);
+  }
+},
+
     Search() {
       console.log(this.search);
     },
@@ -86,9 +87,9 @@ export default {
       <img :src="item.src" />
       <div>
         <h2 v-html="item.highlightedName"></h2>
-        <p v-html="item.highlightedDescription"></p>
+        <p style="margin-top: -10px;" v-html="item.highlightedDescription"></p>
         
-        <button @click="toMessenger(item.id)">Get {{ item.name }}</button>
+        <button @click="toMessenger(item.id)" style="margin-top: 0px;">Get {{ item.title }}</button>
       </div>
     </div>
   </div>

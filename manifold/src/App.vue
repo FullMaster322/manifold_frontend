@@ -4,6 +4,7 @@ export default {
     return {
       activeSection: null,
       hideStatus: 'none',
+      hideStatusReg: 'none',
     };
   },
   methods: {
@@ -48,6 +49,27 @@ export default {
       } else {
         this.hideStatus = 'block'
       }
+      if(this.hideStatusReg === 'block')
+      {
+        this.hideStatusReg = 'none'
+        this.hideStatus = 'none'
+      }
+    },
+    changeHideStatusReg() {
+      if(this.hideStatus === 'block')
+      {
+        this.hideStatus = 'none';
+        this.hideStatusReg = 'block';
+      } else {
+        this.hideStatusReg = 'none';
+        this.hideStatus = 'block';
+      }
+      
+      
+    },
+    close() {
+      this.hideStatus = 'none';
+      this.hideStatusReg = 'none';
     }
   },
   watch: {
@@ -65,18 +87,78 @@ export default {
 
 
 <template>
-  <link rel="stylesheet" href="./assets/app.css">
   <div class="overlay-login" :style="{ display: hideStatus }">
-    <div class="panel-login">
+    <div class="panel-login" style="padding-bottom: 230px;">
       <div class="panel-header">
-        <span class="btn-close" @click="changeHideStatus">close</span>
+        <span class="btn-close" @click="close" style="color: white; font-size: 25px; margin: 10px">✖</span>
       </div>
       <h1>Login</h1>
       <div class="form-login">
-        <input placeholder="email" />
-        <input placeholder="password" />
+        <input placeholder="Email" />
+        <input placeholder="Password" />
         <div>
+          <div style="margin-top: 5px;">
+            <span>Create account -</span>
+            <span style="color: #00bfff; cursor: pointer;" @click="changeHideStatusReg"> Registration</span>
+          </div>
           <button class="btn-login">Login</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="overlay-login" :style="{ display: hideStatusReg }">
+    <div class="panel-login">
+      <div class="panel-header">
+        <span class="btn-close" @click="close" style="color: white; font-size: 25px; margin: 12px;">✖</span>
+      </div>
+      <h1>Registration</h1>
+      <div class="form-login">
+        <input placeholder="Email" />
+        <input placeholder="Password" />
+        <input placeholder="Repeat password" />
+        <div>
+          <div style="margin-top: 5px;">
+            <span>Maybe you have account? -</span>
+            <span style="color: #00bfff; cursor: pointer;" @click="changeHideStatusReg"> Login</span>
+          </div>
+          <button class="btn-login">Create account</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="overlay-login" style="display: none;">
+    <div class="panel-login" style="height: 0px;">
+      
+      <h1 style="margin-top: 10%;">Activation account</h1>
+      <div class="form-login">
+        
+        <div>
+          <div style="margin-top: 5px;">
+            <span>to your email:</span>
+            <span style="color: #00bfff; cursor: pointer;" @click="changeHideStatusReg"> mega@gmail.com </span>
+            <span> a letter has been sent to activate your account</span>
+          </div>
+          
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="overlay-login" style="display:none;">
+    <div class="panel-login" style="height: 0px;">
+      
+      <h1 style="margin-top: 10%;">Verefication account</h1>
+      <div class="form-login">
+        
+        <div>
+          <div style="margin-top: 5px;">
+            <span>to your email:</span>
+            <span style="color: #00bfff; cursor: pointer;" @click="changeHideStatusReg"> mega@gmail.com </span>
+            <span> a letter has been sent to verefication your account</span>
+          </div>
+          
         </div>
       </div>
     </div>
@@ -165,16 +247,16 @@ body {
 
 .panel-login {
   margin: 10% auto;
-  background-color: #1f1f1f;
+  background-color: #1f1f1fde;
   width: 40%;
   border-radius: 16px;
-  border: 1px solid #444;
+  border: 1px solid #1f1f1f;
 
-  box-shadow: 0 0 20px rgba(0, 191, 255, 0.2);
+  box-shadow: 0 0 20px #1f1f1f;
   display: flex;
   flex-direction: column;
   padding-top: 0;
-  padding-bottom: 250px;
+  padding-bottom: 300px;
 }
 
 .panel-header {

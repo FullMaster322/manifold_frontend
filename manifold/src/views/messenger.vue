@@ -14,23 +14,24 @@ export default {
   },
 
   mounted() {
-    this.id = this.$route.query.cardId;
 
-    if (this.id) {
-      this.id = Number(this.id);
+  this.id = this.$route.query.cardId;
+
+  if (this.id) {
+    this.id = Number(this.id);
+  }
+
+  this.fetchAIList().then(() => {
+    const matchedItem = this.items.find(item => item.id === this.id);
+    if (matchedItem) {
+      this.selectItem({
+        ...matchedItem,
+        highlightedName: matchedItem.title,
+        highlightedDescription: matchedItem.description,
+      });
     }
-
-    this.fetchLocalJson().then(() => {
-      const matchedItem = this.items.find(item => item.id === this.id);
-      if (matchedItem) {
-        this.selectItem({
-          ...matchedItem,
-          highlightedName: matchedItem.name,
-          highlightedDescription: matchedItem.description,
-        });
-      }
-    });
-  },
+  });
+    },
 
   computed: {
     highlightedItems() {
@@ -39,7 +40,7 @@ export default {
       if (!keyword) {
         return this.items.map(item => ({
           ...item,
-          highlightedName: item.name,
+          highlightedName: item.title,
           highlightedDescription: item.description,
         }));
       }
@@ -47,25 +48,25 @@ export default {
       const regex = new RegExp(`(${keyword})`, 'gi');
 
       return this.items
-        .filter(item => regex.test(item.name) || regex.test(item.description))
+        .filter(item => regex.test(item.title) || regex.test(item.description))
         .map(item => ({
           ...item,
-          highlightedName: item.name.replace(regex, '<span style="background: #0078D4; color: white">$1</span>'),
+          highlightedName: item.title.replace(regex, '<span style="background: #0078D4; color: white">$1</span>'),
           highlightedDescription: item.description.replace(regex, '<mark>$1</mark>'),
         }));
     },
   },
 
   methods: {
-    async fetchLocalJson() {
-      try {
-        const response = await fetch('/src/assets/list.json');
-        const data = await response.json();
-        this.items = data || [];
-      } catch (error) {
-        console.error('Ошибка загрузки JSON:', error);
-      }
-    },
+   async fetchAIList() {
+  try {
+    const response = await fetch('http://localhost:8000/ai/'); // или твой реальный API URL
+    const data = await response.json();
+    this.items = data || [];
+  } catch (error) {
+    console.error('Ошибка загрузки AI с бэкенда:', error);
+  }
+},
 
     Search() {
       console.log(this.search);
@@ -127,6 +128,7 @@ export default {
 
       textareaEl.value = '';
       this.send = '';
+
       this.adjustHeight();
     },
   },
@@ -152,7 +154,7 @@ export default {
             placeholder="Search"
             v-model="search"
             @input="Search"
-            style="margin-bottom: 20px; margin-left: -5px; width: 240px; font-size: 16px; padding: 3px; background: rgba(30, 35, 45, 0.9);
+            style="margin-bottom: 20px; margin-left: -5px; width: 120%; font-size: 16px; padding: 3px; background: rgba(30, 35, 45, 0.9);
 color: #e0e0e0;
 border: 1px solid rgba(255, 255, 255, 0.1);
 border-radius: 10px;
@@ -190,26 +192,27 @@ padding: 10px 14px; border: 1px; color: white; border-radius: 10px; outline: non
       </div>
     </div>
 
-    
+    <div style="" class="mess">
     <div class="messenger" >
       
       
-      <div style="margin: 10px 0 0 -50px; padding-top: 10px; height: 65%; position: fixed; margin-left: 16%;">
+      <div style="margin: 10px 0 0 -50px; padding-top: 10px; height: 65%; position: fixed; margin-left: 9%;">
         <span style="font-size: 18px;">Chat with&nbsp;</span>
         <span style="font-size: 18px; color: #0078D4; cursor: pointer;">
-          {{ selectedItemName || 'choose AI' }}
+          {{ selectedItemName || 'choose AI' }}&nbsp;
         </span>
       </div>
 
-
-      <div style="position: fixed; bottom: 0; margin-left: 0; width: 66%; margin-left: 5%; overflow: hidden;">
+      <h3 style="color: red; margin-left: 0%; margin-top: 19px;">&nbsp; {{ this.inpMiss }}</h3>
+      <div style="position: fixed; bottom: 0;  width: 66%; margin-left: -1%; overflow: hidden;">
       <div
           class="search-bar"
           style="z-index: 9999; background: none; margin-top: 200px; padding-top: 100px; padding-bottom: 100px; padding-top: 50px; justify-content: center;"
         >
           
 <div style="background-color: none; display: flex; padding-top: 35px; border: 1px; border-radius: 20px; padding-top: 2px; justify-content: center;">
-    <div class="textarea-wrapper" style="width: 100%;">
+    <div class="textarea-wrapper" style="width: 100%;" >
+    
     <textarea
       v-model="text"
       ref="textarea"
@@ -218,13 +221,14 @@ padding: 10px 14px; border: 1px; color: white; border-radius: 10px; outline: non
       placeholder="Send message..."
       style="width: 65%; max-height: 350px; padding-top: 10px; height: 36px; padding-bottom: 0;  font-size: 18px; padding-right: 5%;"
     />
+    
     <button class="sendBtn" style="position: absolute; bottom: 1%; right: -22%;" v-on:click="sendMessage">➤</button>
     </div>
 
           
         </div>
    </div>     
-      
+      </div>
       
     </div>
     </div>
@@ -236,6 +240,10 @@ padding: 10px 14px; border: 1px; color: white; border-radius: 10px; outline: non
 
 
 <style scoped>
+.mess {
+  position: fixed; width: 100%; height: 100%; 
+  background: radial-gradient(circle at top left, #141720, #0a0c10);
+}
 
 .textarea-wrapper {
   position: absolute;
@@ -330,17 +338,18 @@ font-size: 26px;
 
 .messenger {
   margin-top: 50px;
-  width: 71%;
-
+  width: 65%;
+  position: fixed;
+  top: 0;
   height: 100vh;
   background: radial-gradient(circle at top left, #1a1f2b, #0d0f14);
   text-align: center;
-  margin-left: 20%;
+  margin-left: 25%;
 }
 
 .pages {
   position: fixed;
-  width: 150px;
+  width: 155px;
   padding-top: 150px;
   background: rgba(20, 25, 35, 0.6);
   backdrop-filter: blur(12px);
@@ -358,7 +367,7 @@ font-size: 26px;
 
 .cardWrapper {
   position: relative;
-  width: 200%;
+  width: 197%;
   padding-left: 140px;
   padding-right: 120px;
   margin-left: -80px;
@@ -390,7 +399,7 @@ font-size: 26px;
 .aiCard {
   color: #b0c4ff;
   padding: 0px 12px;
-  width: 250px;
+  width: 255px;
   margin-left: -130px;
   display: flex;
   align-items: center;
